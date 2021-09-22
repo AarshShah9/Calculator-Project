@@ -6,53 +6,61 @@
 #
 
 # Asks user to input the first integer variable and stores in a variable
+
+
 user_num1 = int(input('Enter in the 1st integer value: '))
-# Asks user to input the first operator and stores in a variable
-user_exp1 = input(
-    'Enter in expression that will occur between value 1 and 2 (*, /, +, -): ')
-# Asks user to input the second integer variable and stores in a variable
+# Asks user to input the first operator and stores it in a variable
+user_exp1 = input('Enter in the first expression (Use: *, /, +, -): ')
+# Asks user to input the second integer variable and stores it in a variable
 user_num2 = int(input('Enter in the 2nd integer Value: '))
-# Asks user to input the second operator and stores in a variable
-user_exp2 = input(
-    'Enter in expression that will occur between the answer of the first operation and the 3rd number (*, /, +, -): ')
-# Asks user to input the third integer variable and stores in a variable
+# Asks user to input the second operator and stores it in a variable
+user_exp2 = input('Enter in the second expression (Use: *, /, +, -): ')
+# Asks user to input the third integer value and stores it in a variable
 user_num3 = int(input('Enter in the 3rd integer Value: '))
 
 
-# Checks if the first operator chosen is multiplication
-if user_exp1 == '*':
-    answer1 = user_num1 * user_num2
-# Checks if the first operator chosen is division
-elif user_exp1 == '/':
-    answer1 = user_num1 / user_num2
-# Checks if the first operator chosen is adding
-elif user_exp1 == '+':
-    answer1 = user_num1 + user_num2
-# Checks if the first operator chosen is subtraction
-elif user_exp1 == '-':
-    answer1 = user_num1 - user_num2
-# If the expression chosen is not one of the listed above it returns
-# a statement saying the operator is not supported by the code
-else:
-    print("Expression not supported")
+if user_exp1 == ('+') or ('-') and user_exp2 == ('*') or ('/'):
+    if user_exp2 == ('*'):
+        answer1 = user_num2 * user_num3
+    elif user_exp2 == ('/'):
+        answer1 = user_num2 // user_num3
+    if user_exp1 == ('+'):
+        final_answer = user_num1 + answer1
+    elif user_exp1 == ('-'):
+        final_answer = user_num1 - answer1
 
 
-# Checks if the second operator chosen is multiplication
-if user_exp2 == '*':
-    final_answer = answer1 * user_num3
-# Checks if the second operator chosen is division
-elif user_exp2 == '/':
-    final_answer = answer1 / user_num3
-# Checks if the second operator chosen is addition
-elif user_exp2 == '+':
-    final_answer = answer1 + user_num3
-# Checks if the second operator chosen is subtraction
-elif user_exp2 == '-':
-    final_answer = answer1 - user_num3
-# If the expression chosen is not one of the listed above it returns
-# a statement saying the operator is not supported by the code
-else:
-    print("Expression not supported")
+if user_exp1 and user_exp2 == ('*') or ('/'):
+    if user_exp1 == ('*'):
+        answer1 = user_num1 * user_num2
+    elif user_exp1 == ('/'):
+        answer1 = user_num1 // user_num2
+    if user_exp2 == ('*'):
+        final_answer = answer1 * user_num3
+    elif user_exp2 == ('/'):
+        final_answer = answer1 // user_num3
+
+
+if user_exp1 and user_exp2 == ('+') or ('-'):
+    if user_exp1 == ('+'):
+        answer1 = user_num1 + user_num2
+    elif user_exp1 == ('-'):
+        answer1 = user_num1 - user_num2
+    if user_exp2 == ('+'):
+        final_answer = answer1 + user_num3
+    elif user_exp2 == ('-'):
+        final_answer = answer1 - user_num3
+
+
+if user_exp1 == ('*') or ('/') and user_exp2 == ('+') or ('-'):
+    if user_exp1 == ('*'):
+        answer1 = user_num1 * user_num2
+    elif user_exp1 == ('/'):
+        answer1 = user_num1 // user_num2
+    if user_exp2 == ('+'):
+        final_answer = answer1 + user_num2
+    elif user_exp2 == ('-'):
+        final_answer = answer1 - user_num2
 
 
 # Prints the full expression entered by the user while converting the variables to strings
