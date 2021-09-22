@@ -22,12 +22,16 @@ user_num3 = int(input('Enter in the 3rd integer Value: '))
 if user_exp1 == ('+') or ('-') and user_exp2 == ('*') or ('/'):
     if user_exp2 == ('*'):
         answer1 = user_num2 * user_num3
+        if user_exp1 == ('+'):
+            final_answer = user_num1 + answer1
+        elif user_exp1 == ('-'):
+            final_answer = user_num1 - answer1
     elif user_exp2 == ('/'):
         answer1 = user_num2 // user_num3
-    if user_exp1 == ('+'):
-        final_answer = user_num1 + answer1
-    elif user_exp1 == ('-'):
-        final_answer = user_num1 - answer1
+        if user_exp1 == ('+'):
+            final_answer = user_num1 + answer1
+        elif user_exp1 == ('-'):
+            final_answer = user_num1 - answer1
 
 
 if user_exp1 and user_exp2 == ('*') or ('/'):
